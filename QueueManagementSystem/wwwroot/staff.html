@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Staff Panel</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- FIX: Single script load (was duplicated in original) -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/microsoft-signalr/7.0.5/signalr.min.js"></script>
+    <style>
+        body { background: #f4f6f9; }
+        .header { background: #2563eb; color: white; padding: 15px; border-radius: 10px; }
+        .card { border-radius: 12px; }
+        .token-box { font-size: 60px; font-weight: bold; color: #22c55e; }
+        #statusMsg { font-size: 13px; color: #9ca3af; }
+    </style>
+</head>
+<body>
+
+    <script>
+        // AUTH GUARD
+        if (!localStorage.getItem("token") || localStorage.getItem("role") !== "Staff") {
+            window.location.replace("login.html");
+        }
+    </script>
+
+    <div class="container mt-4">
+
+        <!-- HEADER -->
+        <div class="header d-flex justify-content-between align-items-center">
+            <div>
+                <h4 class="mb-0">Staff Panel</h4>
+                <small id="counterInfo">Counter: --</small>
+            </div>
+            <div>
+                <span id="statusMsg" class="me-3">Connecting…</span>
+                <button class="btn btn-light btn-sm" onclick="logout()">Logout</button>
+            </div>
+        </div>
+
+        <!-- CURRENT TOKEN -->
+        <div class="card p-4 text-center mt-4">
+            <h5>Now Serving</h5>
+            <div id="currentToken" class="token-box">--</div>
+        </div>
+
+        <!-- ACTION BUTTON -->
+        <div class="text-center mt-4">
+            <button class="btn btn-primary btn-lg" onclick="nextToken()">⏭ Call Next Token</button>
+        </div>
+
+        <!-- QUEUE TABLE -->
+        <div class="card p-4 mt-4">
+            <h5>Queue List</h5>
+            <table class="table table-bordered text-center mt-3">
+                <thead class="table-dark">
+                    <tr><th>Token</th><th>Status</th><th>Counter</th></tr>
+                </thead>
+                <tbody id="queueTable"></tbody>
+            </table>
+        </div>
+
+    </div>
+
+    <script>
+        const API_BASE = "https://localhost:7194";
+
+        // Show which counter this staff is assigned to
+        const myCounter = localStorage.getItem("counter");
+        document.getElementById("counterInfo").innerText =
+            "Counter: " + (myCounter || "Not assigned");
+
+        function getAuthHeaders() {
+            return {
+                "Authorization": "Bearer " + localStorage.getItem("token"),
+                "Content-Type": "application/json"
+            };
+        }
+
+        // ─── SignalR connection – created ONCE ────────────────────────────────
+        // FIX: Same critical bug as index.html – connection was recreated inside
+        // loadQueue(), spawning a new WebSocket on every data refresh.
+        const connection = new signalR.HubConnectionBuilder()
+            .withUrl(API_BASE + "/queueHub", {
+                accessTokenFactory: () => localStorage.getItem("token")
+            })
+            .withAutomaticReconnect()
+            .build();
+
+        connection.on("ReceiveUpdate", () => loadQueue());
+
+        connection.onreconnecting(() => {
+            document.getElementById("statusMsg").innerText = "Reconnecting…";
+        });
+        connection.onreconnected(() => {
+            document.getElementById("statusMsg").innerText = "Connected ✓";
+            loadQueue();
+        });
+
+        connection.start()
+            .then(() => {
+                document.getElementById("statusMsg").innerText = "Connected ✓";
+                loadQueue();
+            })
+            .catch(err => {
+                document.getElementById("statusMsg").innerText = "Offline";
+                console.error("SignalR error:", err);
+                loadQueue(); // Still load via REST
+            });
+
+        // ─── Next Token ────────────────────────────────────────────────────────
+        async function nextToken() {
+            try {
+                const res = await fetch(API_BASE + "/api/Token/next", {
+                    method: "POST",
+                    headers: getAuthHeaders()
+                });
+                const data = await res.json();
+                if (!res.ok) {
+                    alert(data.message || "Error calling next token.");
+                    return;
+                }
+                // Success – server pushes ReceiveUpdate, loadQueue fires automatically
+                // Show a brief toast for offline/delay resilience
+                if (data.message) console.log(data.message);
+
+            } catch (err) {
+                alert("Network error: " + err.message);
+            }
+        }
+
+        // ─── Load Queue ────────────────────────────────────────────────────────
+        async function loadQueue() {
+            try {
+                const res = await fetch(API_BASE + "/api/Token/all", {
+                    headers: getAuthHeaders()
+                });
+                if (!res.ok) return;
+                const data = await res.json();
+
+                let tableHtml = "";
+                let currentDisplay = "--";
+
+                data.forEach(t => {
+                    let rowClass = "";
+                    if (t.status === "Serving") {
+                        rowClass = "table-success";
+                        // FIX: Show the token serving at THIS counter specifically
+                        if (String(t.counterNumber) === myCounter) {
+                            currentDisplay = t.tokenNumber;
+                        }
+                    }
+                    if (t.status === "Done") rowClass = "table-secondary";
+
+                    tableHtml += `<tr class="${rowClass}">
+                        <td>${t.tokenNumber}</td>
+                        <td>${t.status}</td>
+                        <td>${t.counterNumber ?? "-"}</td>
+                    </tr>`;
+                });
+
+                document.getElementById("queueTable").innerHTML =
+                    tableHtml || "<tr><td colspan='3'>Queue is empty</td></tr>";
+                document.getElementById("currentToken").innerText = currentDisplay;
+
+            } catch (err) {
+                console.error("loadQueue error:", err);
+            }
+        }
+
+        function logout() {
+            localStorage.clear();
+            window.location.replace("login.html");
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,10 @@
+wwwroot\display.html
+wwwroot\index.html
+wwwroot\login.html
+wwwroot\register.html
+wwwroot\staff.html
+C:\Users\prrj7\source\repos\QueueManagementSystem\QueueManagementSystem\wwwroot\display.html
+C:\Users\prrj7\source\repos\QueueManagementSystem\QueueManagementSystem\wwwroot\index.html
+C:\Users\prrj7\source\repos\QueueManagementSystem\QueueManagementSystem\wwwroot\login.html
+C:\Users\prrj7\source\repos\QueueManagementSystem\QueueManagementSystem\wwwroot\register.html
+C:\Users\prrj7\source\repos\QueueManagementSystem\QueueManagementSystem\wwwroot\staff.html

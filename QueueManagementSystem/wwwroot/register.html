@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register - Queue System</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; }
+        body {
+            height: 100vh;
+            background: linear-gradient(135deg, #11998e, #38ef7d);
+            display: flex; justify-content: center; align-items: center;
+        }
+        .container {
+            display: flex; width: 850px;
+            background: white; border-radius: 15px;
+            overflow: hidden; box-shadow: 0 15px 40px rgba(0,0,0,0.2);
+        }
+        .left {
+            flex: 1;
+            background: linear-gradient(135deg, #11998e, #38ef7d);
+            color: white; display: flex; flex-direction: column;
+            justify-content: center; padding: 40px;
+        }
+        .left h1 { font-size: 28px; margin-bottom: 10px; }
+        .left p { opacity: 0.9; }
+        .right { flex: 1; padding: 40px; }
+        .right h2 { text-align: center; margin-bottom: 25px; }
+        .input-group { margin-bottom: 15px; }
+        .input-group input,
+        .input-group select {
+            width: 100%; padding: 12px; border-radius: 8px;
+            border: 1px solid #ccc; outline: none; transition: 0.3s;
+        }
+        .input-group input:focus,
+        .input-group select:focus {
+            border-color: #11998e;
+            box-shadow: 0 0 5px rgba(17,153,142,0.5);
+        }
+        .btn {
+            width: 100%; padding: 12px; background: #11998e;
+            color: white; border: none; border-radius: 8px;
+            cursor: pointer; transition: 0.3s; font-size: 16px;
+        }
+        .btn:hover { background: #0e7c73; }
+        .btn:disabled { background: gray; cursor: not-allowed; }
+        .msg { margin-top: 10px; text-align: center; }
+        .success { color: green; }
+        .error   { color: red; }
+        .loader  { display: none; text-align: center; margin-top: 10px; }
+        .loader span {
+            display: inline-block; width: 10px; height: 10px;
+            background: #11998e; border-radius: 50%; margin: 3px;
+            animation: bounce 0.6s infinite alternate;
+        }
+        .loader span:nth-child(2) { animation-delay: 0.2s; }
+        .loader span:nth-child(3) { animation-delay: 0.4s; }
+        @keyframes bounce { to { transform: translateY(-10px); } }
+        .link { margin-top: 10px; text-align: center; }
+        .link a { text-decoration: none; color: #11998e; font-weight: 500; }
+        /* FIX: Hide counter selector when Admin is selected */
+        #counterGroup { transition: opacity 0.3s; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="left">
+            <h1>Create Account</h1>
+            <p>Register Admin or Staff to manage the queue system.</p>
+        </div>
+        <div class="right">
+            <h2>Register</h2>
+
+            <div class="input-group">
+                <input type="text" id="username" placeholder="Username" autocomplete="username">
+            </div>
+            <div class="input-group">
+                <input type="password" id="password" placeholder="Password" autocomplete="new-password">
+            </div>
+            <div class="input-group">
+                <!-- FIX: Role change triggers counter visibility -->
+                <select id="role" onchange="onRoleChange()">
+                    <option value="Admin">Admin</option>
+                    <option value="Staff">Staff</option>
+                </select>
+            </div>
+            <!-- FIX: Counter group shown/hidden based on role -->
+            <div class="input-group" id="counterGroup" style="display:none;">
+                <select id="counter">
+                    <option value="">Select Counter</option>
+                    <option value="1">Counter 1</option>
+                    <option value="2">Counter 2</option>
+                    <option value="3">Counter 3</option>
+                </select>
+            </div>
+
+            <button class="btn" id="registerBtn" onclick="register()">Register</button>
+
+            <div class="loader" id="loader">
+                <span></span><span></span><span></span>
+            </div>
+
+            <p id="msg" class="msg"></p>
+
+            <div class="link">
+                Already have an account? <a href="login.html">Login</a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const API_BASE = "https://localhost:7194";
+
+        function onRoleChange() {
+            const role = document.getElementById("role").value;
+            document.getElementById("counterGroup").style.display =
+                role === "Staff" ? "block" : "none";
+        }
+
+        async function register() {
+            const username = document.getElementById("username").value.trim();
+            const password = document.getElementById("password").value;
+            const role     = document.getElementById("role").value;
+            // FIX: counterNumber must be sent as an integer (or null), NOT a string.
+            // Previously it was sent as a raw string from the select value,
+            // which caused the backend int? binding to fail (null stored instead of number).
+            const counterRaw = document.getElementById("counter").value;
+            const counterNumber = counterRaw ? parseInt(counterRaw, 10) : null;
+
+            const btn    = document.getElementById("registerBtn");
+            const loader = document.getElementById("loader");
+            const msg    = document.getElementById("msg");
+
+            msg.innerText = "";
+            msg.className = "msg";
+
+            if (!username || !password) {
+                msg.innerText = "Please fill in all fields.";
+                msg.classList.add("error");
+                return;
+            }
+
+            // FIX: Validate counter on the client side before sending
+            if (role === "Staff" && !counterNumber) {
+                msg.innerText = "Staff must select a counter.";
+                msg.classList.add("error");
+                return;
+            }
+
+            btn.disabled = true;
+            loader.style.display = "block";
+
+            try {
+                const res = await fetch(API_BASE + "/api/Auth/register", {
+                    method: "POST",
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify({ username, password, role, counterNumber })
+                });
+
+                const text = await res.text();
+                let data;
+                try { data = JSON.parse(text); }
+                catch { throw new Error(text || "Server error"); }
+
+                if (!res.ok) throw new Error(data.message || "Registration failed.");
+
+                msg.innerText = data.message;
+                msg.classList.add("success");
+
+                setTimeout(() => window.location.replace("login.html"), 1500);
+
+            } catch (err) {
+                msg.innerText = err.message;
+                msg.classList.add("error");
+            } finally {
+                btn.disabled = false;
+                loader.style.display = "none";
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,309 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\prrj7\\source\\repos\\QueueManagementSystem\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{2D90596A-AA79-5FA4-4B83-8949895A8997}|QueueManagementSystem\\QueueManagementSystem.csproj|c:\\users\\prrj7\\source\\repos\\queuemanagementsystem\\queuemanagementsystem\\wwwroot\\display.html||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{2D90596A-AA79-5FA4-4B83-8949895A8997}|QueueManagementSystem\\QueueManagementSystem.csproj|solutionrelative:queuemanagementsystem\\wwwroot\\display.html||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2D90596A-AA79-5FA4-4B83-8949895A8997}|QueueManagementSystem\\QueueManagementSystem.csproj|c:\\users\\prrj7\\source\\repos\\queuemanagementsystem\\queuemanagementsystem\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2D90596A-AA79-5FA4-4B83-8949895A8997}|QueueManagementSystem\\QueueManagementSystem.csproj|solutionrelative:queuemanagementsystem\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2D90596A-AA79-5FA4-4B83-8949895A8997}|QueueManagementSystem\\QueueManagementSystem.csproj|c:\\users\\prrj7\\source\\repos\\queuemanagementsystem\\queuemanagementsystem\\wwwroot\\index.html||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{2D90596A-AA79-5FA4-4B83-8949895A8997}|QueueManagementSystem\\QueueManagementSystem.csproj|solutionrelative:queuemanagementsystem\\wwwroot\\index.html||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2D90596A-AA79-5FA4-4B83-8949895A8997}|QueueManagementSystem\\QueueManagementSystem.csproj|c:\\users\\prrj7\\source\\repos\\queuemanagementsystem\\queuemanagementsystem\\wwwroot\\register.html||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{2D90596A-AA79-5FA4-4B83-8949895A8997}|QueueManagementSystem\\QueueManagementSystem.csproj|solutionrelative:queuemanagementsystem\\wwwroot\\register.html||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2D90596A-AA79-5FA4-4B83-8949895A8997}|QueueManagementSystem\\QueueManagementSystem.csproj|c:\\users\\prrj7\\source\\repos\\queuemanagementsystem\\queuemanagementsystem\\wwwroot\\staff.html||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{2D90596A-AA79-5FA4-4B83-8949895A8997}|QueueManagementSystem\\QueueManagementSystem.csproj|solutionrelative:queuemanagementsystem\\wwwroot\\staff.html||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2D90596A-AA79-5FA4-4B83-8949895A8997}|QueueManagementSystem\\QueueManagementSystem.csproj|c:\\users\\prrj7\\source\\repos\\queuemanagementsystem\\queuemanagementsystem\\wwwroot\\login.html||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{2D90596A-AA79-5FA4-4B83-8949895A8997}|QueueManagementSystem\\QueueManagementSystem.csproj|solutionrelative:queuemanagementsystem\\wwwroot\\login.html||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2D90596A-AA79-5FA4-4B83-8949895A8997}|QueueManagementSystem\\QueueManagementSystem.csproj|c:\\users\\prrj7\\source\\repos\\queuemanagementsystem\\queuemanagementsystem\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2D90596A-AA79-5FA4-4B83-8949895A8997}|QueueManagementSystem\\QueueManagementSystem.csproj|solutionrelative:queuemanagementsystem\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2D90596A-AA79-5FA4-4B83-8949895A8997}|QueueManagementSystem\\QueueManagementSystem.csproj|c:\\users\\prrj7\\source\\repos\\queuemanagementsystem\\queuemanagementsystem\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2D90596A-AA79-5FA4-4B83-8949895A8997}|QueueManagementSystem\\QueueManagementSystem.csproj|solutionrelative:queuemanagementsystem\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2D90596A-AA79-5FA4-4B83-8949895A8997}|QueueManagementSystem\\QueueManagementSystem.csproj|c:\\users\\prrj7\\source\\repos\\queuemanagementsystem\\queuemanagementsystem\\hubs\\queuehub.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2D90596A-AA79-5FA4-4B83-8949895A8997}|QueueManagementSystem\\QueueManagementSystem.csproj|solutionrelative:queuemanagementsystem\\hubs\\queuehub.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2D90596A-AA79-5FA4-4B83-8949895A8997}|QueueManagementSystem\\QueueManagementSystem.csproj|c:\\users\\prrj7\\source\\repos\\queuemanagementsystem\\queuemanagementsystem\\models\\loginrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2D90596A-AA79-5FA4-4B83-8949895A8997}|QueueManagementSystem\\QueueManagementSystem.csproj|solutionrelative:queuemanagementsystem\\models\\loginrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2D90596A-AA79-5FA4-4B83-8949895A8997}|QueueManagementSystem\\QueueManagementSystem.csproj|c:\\users\\prrj7\\source\\repos\\queuemanagementsystem\\queuemanagementsystem\\controllers\\tokencontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2D90596A-AA79-5FA4-4B83-8949895A8997}|QueueManagementSystem\\QueueManagementSystem.csproj|solutionrelative:queuemanagementsystem\\controllers\\tokencontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2D90596A-AA79-5FA4-4B83-8949895A8997}|QueueManagementSystem\\QueueManagementSystem.csproj|c:\\users\\prrj7\\source\\repos\\queuemanagementsystem\\queuemanagementsystem\\models\\token.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2D90596A-AA79-5FA4-4B83-8949895A8997}|QueueManagementSystem\\QueueManagementSystem.csproj|solutionrelative:queuemanagementsystem\\models\\token.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2D90596A-AA79-5FA4-4B83-8949895A8997}|QueueManagementSystem\\QueueManagementSystem.csproj|c:\\users\\prrj7\\source\\repos\\queuemanagementsystem\\queuemanagementsystem\\data\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2D90596A-AA79-5FA4-4B83-8949895A8997}|QueueManagementSystem\\QueueManagementSystem.csproj|solutionrelative:queuemanagementsystem\\data\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2D90596A-AA79-5FA4-4B83-8949895A8997}|QueueManagementSystem\\QueueManagementSystem.csproj|c:\\users\\prrj7\\source\\repos\\queuemanagementsystem\\queuemanagementsystem\\migrations\\20260502055740_addusersnew.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2D90596A-AA79-5FA4-4B83-8949895A8997}|QueueManagementSystem\\QueueManagementSystem.csproj|solutionrelative:queuemanagementsystem\\migrations\\20260502055740_addusersnew.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2D90596A-AA79-5FA4-4B83-8949895A8997}|QueueManagementSystem\\QueueManagementSystem.csproj|c:\\users\\prrj7\\source\\repos\\queuemanagementsystem\\queuemanagementsystem\\migrations\\20260502062725_initialfix.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2D90596A-AA79-5FA4-4B83-8949895A8997}|QueueManagementSystem\\QueueManagementSystem.csproj|solutionrelative:queuemanagementsystem\\migrations\\20260502062725_initialfix.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2D90596A-AA79-5FA4-4B83-8949895A8997}|QueueManagementSystem\\QueueManagementSystem.csproj|c:\\users\\prrj7\\source\\repos\\queuemanagementsystem\\queuemanagementsystem\\migrations\\20260504070034_adduserstable.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2D90596A-AA79-5FA4-4B83-8949895A8997}|QueueManagementSystem\\QueueManagementSystem.csproj|solutionrelative:queuemanagementsystem\\migrations\\20260504070034_adduserstable.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2D90596A-AA79-5FA4-4B83-8949895A8997}|QueueManagementSystem\\QueueManagementSystem.csproj|c:\\users\\prrj7\\source\\repos\\queuemanagementsystem\\queuemanagementsystem\\migrations\\20260504154211_addcountersystem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2D90596A-AA79-5FA4-4B83-8949895A8997}|QueueManagementSystem\\QueueManagementSystem.csproj|solutionrelative:queuemanagementsystem\\migrations\\20260504154211_addcountersystem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 6,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "AppDbContext.cs",
+              "DocumentMoniker": "C:\\Users\\prrj7\\source\\repos\\QueueManagementSystem\\QueueManagementSystem\\Data\\AppDbContext.cs",
+              "RelativeDocumentMoniker": "QueueManagementSystem\\Data\\AppDbContext.cs",
+              "ToolTip": "C:\\Users\\prrj7\\source\\repos\\QueueManagementSystem\\QueueManagementSystem\\Data\\AppDbContext.cs",
+              "RelativeToolTip": "QueueManagementSystem\\Data\\AppDbContext.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-30T15:10:20.518Z",
+              "IsPinned": true
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "Token.cs",
+              "DocumentMoniker": "C:\\Users\\prrj7\\source\\repos\\QueueManagementSystem\\QueueManagementSystem\\Models\\Token.cs",
+              "RelativeDocumentMoniker": "QueueManagementSystem\\Models\\Token.cs",
+              "ToolTip": "C:\\Users\\prrj7\\source\\repos\\QueueManagementSystem\\QueueManagementSystem\\Models\\Token.cs",
+              "RelativeToolTip": "QueueManagementSystem\\Models\\Token.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-30T15:20:56.358Z",
+              "IsPinned": true
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "LoginRequest.cs",
+              "DocumentMoniker": "C:\\Users\\prrj7\\source\\repos\\QueueManagementSystem\\QueueManagementSystem\\Models\\LoginRequest.cs",
+              "RelativeDocumentMoniker": "QueueManagementSystem\\Models\\LoginRequest.cs",
+              "ToolTip": "C:\\Users\\prrj7\\source\\repos\\QueueManagementSystem\\QueueManagementSystem\\Models\\LoginRequest.cs",
+              "RelativeToolTip": "QueueManagementSystem\\Models\\LoginRequest.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAsAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-01T14:51:06.649Z",
+              "IsPinned": true
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:1:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "display.html",
+              "DocumentMoniker": "C:\\Users\\prrj7\\source\\repos\\QueueManagementSystem\\QueueManagementSystem\\wwwroot\\display.html",
+              "RelativeDocumentMoniker": "QueueManagementSystem\\wwwroot\\display.html",
+              "ToolTip": "C:\\Users\\prrj7\\source\\repos\\QueueManagementSystem\\QueueManagementSystem\\wwwroot\\display.html",
+              "RelativeToolTip": "QueueManagementSystem\\wwwroot\\display.html",
+              "ViewState": "AgIAADAAAAAAAAAAAAAAACIAAAAdAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
+              "WhenOpened": "2026-05-01T10:30:20.29Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "QueueHub.cs",
+              "DocumentMoniker": "C:\\Users\\prrj7\\source\\repos\\QueueManagementSystem\\QueueManagementSystem\\Hubs\\QueueHub.cs",
+              "RelativeDocumentMoniker": "QueueManagementSystem\\Hubs\\QueueHub.cs",
+              "ToolTip": "C:\\Users\\prrj7\\source\\repos\\QueueManagementSystem\\QueueManagementSystem\\Hubs\\QueueHub.cs",
+              "RelativeToolTip": "QueueManagementSystem\\Hubs\\QueueHub.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-05T07:21:48.881Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\prrj7\\source\\repos\\QueueManagementSystem\\QueueManagementSystem\\Program.cs",
+              "RelativeDocumentMoniker": "QueueManagementSystem\\Program.cs",
+              "ToolTip": "C:\\Users\\prrj7\\source\\repos\\QueueManagementSystem\\QueueManagementSystem\\Program.cs",
+              "RelativeToolTip": "QueueManagementSystem\\Program.cs",
+              "ViewState": "AgIAABIAAAAAAAAAAAAAAEwAAAAKAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-30T14:52:41.014Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "index.html",
+              "DocumentMoniker": "C:\\Users\\prrj7\\source\\repos\\QueueManagementSystem\\QueueManagementSystem\\wwwroot\\index.html",
+              "RelativeDocumentMoniker": "QueueManagementSystem\\wwwroot\\index.html",
+              "ToolTip": "C:\\Users\\prrj7\\source\\repos\\QueueManagementSystem\\QueueManagementSystem\\wwwroot\\index.html",
+              "RelativeToolTip": "QueueManagementSystem\\wwwroot\\index.html",
+              "ViewState": "AgIAAKgAAAAAAAAAAAAAALMAAAAnAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
+              "WhenOpened": "2026-05-01T05:11:22.804Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "AuthController.cs",
+              "DocumentMoniker": "C:\\Users\\prrj7\\source\\repos\\QueueManagementSystem\\QueueManagementSystem\\Controllers\\AuthController.cs",
+              "RelativeDocumentMoniker": "QueueManagementSystem\\Controllers\\AuthController.cs",
+              "ToolTip": "C:\\Users\\prrj7\\source\\repos\\QueueManagementSystem\\QueueManagementSystem\\Controllers\\AuthController.cs",
+              "RelativeToolTip": "QueueManagementSystem\\Controllers\\AuthController.cs",
+              "ViewState": "AgIAABYAAAAAAAAAAAAIwGYAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-04T06:22:06.891Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "login.html",
+              "DocumentMoniker": "C:\\Users\\prrj7\\source\\repos\\QueueManagementSystem\\QueueManagementSystem\\wwwroot\\login.html",
+              "RelativeDocumentMoniker": "QueueManagementSystem\\wwwroot\\login.html",
+              "ToolTip": "C:\\Users\\prrj7\\source\\repos\\QueueManagementSystem\\QueueManagementSystem\\wwwroot\\login.html",
+              "RelativeToolTip": "QueueManagementSystem\\wwwroot\\login.html",
+              "ViewState": "AgIAAIAAAAAAAAAAAAAIwJAAAAAEAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
+              "WhenOpened": "2026-05-04T05:30:34.593Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "staff.html",
+              "DocumentMoniker": "C:\\Users\\prrj7\\source\\repos\\QueueManagementSystem\\QueueManagementSystem\\wwwroot\\staff.html",
+              "RelativeDocumentMoniker": "QueueManagementSystem\\wwwroot\\staff.html",
+              "ToolTip": "C:\\Users\\prrj7\\source\\repos\\QueueManagementSystem\\QueueManagementSystem\\wwwroot\\staff.html",
+              "RelativeToolTip": "QueueManagementSystem\\wwwroot\\staff.html",
+              "ViewState": "AgIAAIcAAAAAAAAAAAAAwJgAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
+              "WhenOpened": "2026-05-04T07:23:35.584Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "register.html",
+              "DocumentMoniker": "C:\\Users\\prrj7\\source\\repos\\QueueManagementSystem\\QueueManagementSystem\\wwwroot\\register.html",
+              "RelativeDocumentMoniker": "QueueManagementSystem\\wwwroot\\register.html",
+              "ToolTip": "C:\\Users\\prrj7\\source\\repos\\QueueManagementSystem\\QueueManagementSystem\\wwwroot\\register.html",
+              "RelativeToolTip": "QueueManagementSystem\\wwwroot\\register.html",
+              "ViewState": "AgIAAOsAAAAAAAAAAAAAwP4AAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
+              "WhenOpened": "2026-05-04T07:01:22.098Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "User.cs",
+              "DocumentMoniker": "C:\\Users\\prrj7\\source\\repos\\QueueManagementSystem\\QueueManagementSystem\\Models\\User.cs",
+              "RelativeDocumentMoniker": "QueueManagementSystem\\Models\\User.cs",
+              "ToolTip": "C:\\Users\\prrj7\\source\\repos\\QueueManagementSystem\\QueueManagementSystem\\Models\\User.cs",
+              "RelativeToolTip": "QueueManagementSystem\\Models\\User.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAASAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-04T15:40:12.527Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "TokenController.cs",
+              "DocumentMoniker": "C:\\Users\\prrj7\\source\\repos\\QueueManagementSystem\\QueueManagementSystem\\Controllers\\TokenController.cs",
+              "RelativeDocumentMoniker": "QueueManagementSystem\\Controllers\\TokenController.cs",
+              "ToolTip": "C:\\Users\\prrj7\\source\\repos\\QueueManagementSystem\\QueueManagementSystem\\Controllers\\TokenController.cs",
+              "RelativeToolTip": "QueueManagementSystem\\Controllers\\TokenController.cs",
+              "ViewState": "AgIAAH0AAAAAAAAAAAAcwKMAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-30T14:59:59.64Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "20260504154211_AddCounterSystem.cs",
+              "DocumentMoniker": "C:\\Users\\prrj7\\source\\repos\\QueueManagementSystem\\QueueManagementSystem\\Migrations\\20260504154211_AddCounterSystem.cs",
+              "RelativeDocumentMoniker": "QueueManagementSystem\\Migrations\\20260504154211_AddCounterSystem.cs",
+              "ToolTip": "C:\\Users\\prrj7\\source\\repos\\QueueManagementSystem\\QueueManagementSystem\\Migrations\\20260504154211_AddCounterSystem.cs",
+              "RelativeToolTip": "QueueManagementSystem\\Migrations\\20260504154211_AddCounterSystem.cs",
+              "ViewState": "AgIAAA0AAAAAAAAAAAAQwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-04T15:42:12.096Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "20260504070034_AddUsersTable.cs",
+              "DocumentMoniker": "C:\\Users\\prrj7\\source\\repos\\QueueManagementSystem\\QueueManagementSystem\\Migrations\\20260504070034_AddUsersTable.cs",
+              "RelativeDocumentMoniker": "QueueManagementSystem\\Migrations\\20260504070034_AddUsersTable.cs",
+              "ToolTip": "C:\\Users\\prrj7\\source\\repos\\QueueManagementSystem\\QueueManagementSystem\\Migrations\\20260504070034_AddUsersTable.cs",
+              "RelativeToolTip": "QueueManagementSystem\\Migrations\\20260504070034_AddUsersTable.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-04T07:00:35.031Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "20260502055740_AddUsersNew.cs",
+              "DocumentMoniker": "C:\\Users\\prrj7\\source\\repos\\QueueManagementSystem\\QueueManagementSystem\\Migrations\\20260502055740_AddUsersNew.cs",
+              "RelativeDocumentMoniker": "QueueManagementSystem\\Migrations\\20260502055740_AddUsersNew.cs",
+              "ToolTip": "C:\\Users\\prrj7\\source\\repos\\QueueManagementSystem\\QueueManagementSystem\\Migrations\\20260502055740_AddUsersNew.cs",
+              "RelativeToolTip": "QueueManagementSystem\\Migrations\\20260502055740_AddUsersNew.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAABwAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-04T05:12:47.381Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "20260502062725_InitialFix.cs",
+              "DocumentMoniker": "C:\\Users\\prrj7\\source\\repos\\QueueManagementSystem\\QueueManagementSystem\\Migrations\\20260502062725_InitialFix.cs",
+              "RelativeDocumentMoniker": "QueueManagementSystem\\Migrations\\20260502062725_InitialFix.cs",
+              "ToolTip": "C:\\Users\\prrj7\\source\\repos\\QueueManagementSystem\\QueueManagementSystem\\Migrations\\20260502062725_InitialFix.cs",
+              "RelativeToolTip": "QueueManagementSystem\\Migrations\\20260502062725_InitialFix.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-02T06:27:26.176Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

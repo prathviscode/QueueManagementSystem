@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Queue Display</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/microsoft-signalr/7.0.5/signalr.min.js"></script>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            background: #0f172a;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            padding: 30px;
+        }
+        h1 { font-size: 36px; margin-bottom: 40px; color: #38bdf8; letter-spacing: 2px; }
+        #counterSection {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 24px;
+            justify-content: center;
+            margin-bottom: 40px;
+        }
+        .counter-card {
+            background: #1e293b;
+            border: 2px solid #38bdf8;
+            border-radius: 16px;
+            padding: 30px 40px;
+            text-align: center;
+            min-width: 200px;
+        }
+        .counter-label { font-size: 18px; color: #94a3b8; margin-bottom: 8px; }
+        .counter-token { font-size: 72px; font-weight: bold; color: #22c55e; line-height: 1; }
+        #waitingSection {
+            background: #1e293b;
+            border-radius: 12px;
+            padding: 20px 40px;
+            text-align: center;
+            max-width: 700px;
+        }
+        #waitingSection h3 { font-size: 16px; color: #94a3b8; margin-bottom: 10px; }
+        #nextTokens { font-size: 28px; color: #f59e0b; letter-spacing: 4px; }
+        #connectionStatus {
+            position: fixed; top: 12px; right: 16px;
+            font-size: 12px; color: #4ade80;
+        }
+        #emptyMsg { font-size: 24px; color: #4b5563; display: none; }
+    </style>
+</head>
+<body>
+
+    <div id="connectionStatus">● Live</div>
+
+    <h1>🎫 Queue Display</h1>
+
+    <div id="counterSection">
+        <!-- Counter cards injected here -->
+    </div>
+
+    <p id="emptyMsg">No tokens are currently being served.</p>
+
+    <div id="waitingSection">
+        <h3>Up Next</h3>
+        <div id="nextTokens">—</div>
+    </div>
+
+    <script>
+        const API_BASE = "https://localhost:7194";
+
+        // Track last announced token per counter to avoid repeated speech
+        let lastCalledTokens = {};
+
+        // ─── Voice announcement ───────────────────────────────────────────────
+        function speakToken(tokenNumber, counterNumber) {
+            // FIX: Cancel any pending utterance before speaking a new one
+            speechSynthesis.cancel();
+            const msg = new SpeechSynthesisUtterance(
+                "टोकन नंबर " + tokenNumber + " कृपया काउंटर " + counterNumber+ " पर आएं"
+            );
+            msg.lang = "hi-IN";
+            msg.rate = 0.9;
+            speechSynthesis.speak(msg);
+        }
+
+        // ─── Load / Refresh Display ────────────────────────────────────────────
+        async function loadDisplay() {
+            try {
+                // FIX: Use /api/Token/all which is AllowAnonymous – no JWT needed here
+                const res = await fetch(API_BASE + "/api/Token/all");
+                if (!res.ok) { console.error("API error:", res.status); return; }
+                const data = await res.json();
+
+                const serving = data.filter(t => t.status === "Serving");
+                const waiting = data.filter(t => t.status === "Waiting");
+
+                // ── Counters ──
+                const emptyMsg = document.getElementById("emptyMsg");
+                const section  = document.getElementById("counterSection");
+
+                if (serving.length === 0) {
+                    section.innerHTML = "";
+                    emptyMsg.style.display = "block";
+                } else {
+                    emptyMsg.style.display = "none";
+                    let html = "";
+                    serving.forEach(t => {
+                        html += `<div class="counter-card">
+                            <div class="counter-label">Counter ${t.counterNumber ?? "?"}</div>
+                            <div class="counter-token">${t.tokenNumber}</div>
+                        </div>`;
+
+                        // Announce only when token changes at this counter
+                        const key = t.counterNumber;
+                        if (lastCalledTokens[key] !== t.tokenNumber) {
+                            speakToken(t.tokenNumber, t.counterNumber);
+                            lastCalledTokens[key] = t.tokenNumber;
+                        }
+                    });
+                    section.innerHTML = html;
+                }
+
+                // ── Waiting list (next 5) ──
+                const nextText = waiting.length > 0
+                    ? waiting.slice(0, 5).map(t => "T" + t.tokenNumber).join("  |  ")
+                    : "—";
+                document.getElementById("nextTokens").innerText = nextText;
+
+            } catch (err) {
+                console.error("loadDisplay error:", err);
+            }
+        }
+
+        // ─── SignalR – anonymous connection (display needs no JWT) ─────────────
+        const connection = new signalR.HubConnectionBuilder()
+            .withUrl(API_BASE + "/queueHub")  // No accessTokenFactory needed
+            .withAutomaticReconnect()
+            .build();
+
+        connection.on("ReceiveUpdate", () => loadDisplay());
+
+        connection.onreconnecting(() => {
+            document.getElementById("connectionStatus").style.color = "#f59e0b";
+            document.getElementById("connectionStatus").innerText = "● Reconnecting…";
+        });
+        connection.onreconnected(() => {
+            document.getElementById("connectionStatus").style.color = "#4ade80";
+            document.getElementById("connectionStatus").innerText = "● Live";
+            loadDisplay();
+        });
+        connection.onclose(() => {
+            document.getElementById("connectionStatus").style.color = "#ef4444";
+            document.getElementById("connectionStatus").innerText = "● Disconnected";
+        });
+
+        // Start and initial load
+        connection.start()
+            .then(() => loadDisplay())
+            .catch(err => {
+                console.error("SignalR error:", err);
+                // FIX: Fall back to polling if SignalR fails (e.g., CORS on display TV)
+                loadDisplay();
+                setInterval(loadDisplay, 5000);
+            });
+    </script>
+</body>
+</html>
